@@ -1,5 +1,5 @@
 ---
-_schema-version: '3.1'
+_schema-version: "3.1"
 ID: risk-management
 version: 1.0.0
 description: "Template for the the SAP Extension Suite Learning Journey"
@@ -41,15 +41,15 @@ modules:
       - name: srv-api
         group: destinations
         properties:
-         forwardAuthToken: true
-         strictSSL: true
-         name: srv-binding
-         url: "~{srv-url}"
+          forwardAuthToken: true
+          strictSSL: true
+          name: srv-binding
+          url: "~{srv-url}"
     build-parameters:
       requires:
         - name: risk-management-app
           artifacts:
-          - ./*
+            - ./*
           target-path: resources
   # -------------------- UI -----------------------------------
   - name: risk-management-app
@@ -75,16 +75,16 @@ resources:
       service-plan: application
       path: ./xs-security.json
       config:
-       xsappname: 'risk-management-${space}'
-       role-collections:
-       - name: 'RiskManager-${space}'
-         description: Manage Risks
-         role-template-references:
-         - $XSAPPNAME.RiskManager
-       - name: 'RiskViewer-${space}'
-         description: View Risks
-         role-template-references:
-         - $XSAPPNAME.RiskViewer
+        xsappname: "risk-management-${space}"
+        role-collections:
+          - name: "RiskManager-${space}"
+            description: Manage Risks
+            role-template-references:
+              - $XSAPPNAME.RiskManager
+          - name: "RiskViewer-${space}"
+            description: View Risks
+            role-template-references:
+              - $XSAPPNAME.RiskViewer
     # ------------------------------------------------------------
   - name: risk-management-destination-service
     # ------------------------------------------------------------
